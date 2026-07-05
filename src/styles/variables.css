@@ -2,13 +2,13 @@
   /* ========================
      COLORS
      ======================== */
-  --color-primary: #C8A97E;
-  --color-primary-light: #D4BA94;
-  --color-primary-dark: #B8956A;
+--color-primary: #C6A664;
+--color-primary-light: #D4B87A;
+--color-primary-dark: #B8952E;
 
   /* Backgrounds */
-  --color-bg-dark: #1A1A1A;
-  --color-bg-darker: #111111;
+  --color-bg-dark: #151515;
+  --color-bg-darker: #000000;
   --color-bg-light: #F5F0EB;
   --color-bg-cream: #FAF7F4;
   --color-bg-white: #FFFFFF;
@@ -27,11 +27,11 @@
   /* ========================
      TYPOGRAPHY
      ======================== */
-  --font-heading: 'Playfair Display', Georgia, serif;
+--font-heading: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
   /* Font Sizes */
-  --fs-hero: clamp(3rem, 6vw, 5.5rem);
+  --fs-hero: clamp(4rem, 14vw, 12rem);
   --fs-h1: clamp(2rem, 4vw, 3.5rem);
   --fs-h2: clamp(1.75rem, 3vw, 2.5rem);
   --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
@@ -40,7 +40,7 @@
   --fs-eyebrow: clamp(0.688rem, 0.9vw, 0.813rem);
 
   /* Font Weights */
-  --fw-light: 300;
+  --fw-light: 200;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;

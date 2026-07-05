@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sf http://localhost:5173)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(node \"C:\\\\Users\\\\Kapoo\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--GitHub-cafe-cozy\\\\0c499584-2506-4a37-84d0-c1c7c6909f87\\\\scratchpad\\\\screenshot.mjs\" \"C:\\\\Users\\\\Kapoo\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--GitHub-cafe-cozy\\\\0c499584-2506-4a37-84d0-c1c7c6909f87\\\\scratchpad\\\\hero-v2.png\")",
+      "Bash(node '__TRACKED_VAR__\\\\screenshot2.mjs' '__TRACKED_VAR__\\\\hero-1366.png' 1366 768)",
+      "Bash(node '__TRACKED_VAR__\\\\screenshot2.mjs' '__TRACKED_VAR__\\\\hero-1280.png' 1280 800)",
+      "Bash(node '__TRACKED_VAR__\\\\screenshot2.mjs' '__TRACKED_VAR__\\\\hero-1024.png' 1024 768)",
+      "Bash(node '__TRACKED_VAR__\\\\screenshot2.mjs' '__TRACKED_VAR__\\\\hero-900.png' 900 700)"
+    ]
+  }
+}
