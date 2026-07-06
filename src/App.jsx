@@ -7,6 +7,7 @@ import Gallery from './sections/Gallery/Gallery'
 import WhyChooseUs from './sections/WhyChooseUs/WhyChooseUs'
 import Testimonials from './sections/Testimonials/Testimonials'
 import Location from './sections/Location/Location'
+import Footer from './sections/Footer/Footer'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <WhyChooseUs />
       <Testimonials />
       <Location />
+      <Footer />
     </div>
   )
 }
