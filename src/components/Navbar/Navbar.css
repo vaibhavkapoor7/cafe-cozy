@@ -62,6 +62,14 @@
   width: 100%;
 }
 
+.navbar--over-light .navbar__link {
+  color: var(--color-primary);
+}
+
+.navbar--over-light .navbar__link:hover {
+  color: var(--color-primary-dark);
+}
+
 .navbar__cta {
   font-family: var(--font-body);
   font-size: 0.75rem;

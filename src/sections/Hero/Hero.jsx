@@ -4,7 +4,7 @@ import './Hero.css'
 
 const Hero = () => {
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="home" data-navbar-theme="dark">
       <div className="hero__overlay"></div>
       <div className="hero__vertical-text">
   Premium Coffee · Warm Moments
