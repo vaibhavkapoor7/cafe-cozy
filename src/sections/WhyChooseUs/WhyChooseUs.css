@@ -1,0 +1,15 @@
+.why {
+  background-color: var(--color-bg-cream);
+}
+
+.why__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+}
+
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}

@@ -21,7 +21,10 @@ const Navbar = () => {
         setHidden(false)
       }
 
-      setOverLight(currentScrollY > window.innerHeight - 80)
+      const sectionAtNav = document
+        .elementFromPoint(window.innerWidth / 2, 90)
+        ?.closest('[data-navbar-theme]')
+      setOverLight(sectionAtNav?.dataset.navbarTheme === 'light')
 
       lastScrollY.current = currentScrollY
 

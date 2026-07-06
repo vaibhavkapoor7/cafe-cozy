@@ -66,7 +66,7 @@ const Gallery = () => {
   }, [])
 
   return (
-    <section className="gallery section" id="gallery">
+    <section className="gallery section" id="gallery" data-navbar-theme="dark">
       <div className="gallery__container container">
 
         <div className="gallery__intro">

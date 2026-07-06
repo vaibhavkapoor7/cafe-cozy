@@ -19,7 +19,7 @@ const Menu = () => {
   const items = menuItems[activeCategory]
 
   return (
-    <section className="menu section" id="menu">
+    <section className="menu section" id="menu" data-navbar-theme="light">
 
       <div className="menu__image-wrapper">
         <img src={menuImg} alt="A freshly prepared coffee" className="menu__image" />

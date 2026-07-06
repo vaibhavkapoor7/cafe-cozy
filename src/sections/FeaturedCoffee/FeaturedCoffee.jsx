@@ -33,7 +33,7 @@ const FeaturedCoffee = () => {
   }
 
   return (
-    <section className="featured section" id="featured">
+    <section className="featured section" id="featured" data-navbar-theme="light">
 
       <div className="featured__inner container">
 
