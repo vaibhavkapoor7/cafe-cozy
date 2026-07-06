@@ -1,0 +1,37 @@
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.section-title--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.section-title--center {
+  align-items: center;
+  text-align: center;
+}
+
+.section-title__eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.section-title__heading {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  color: var(--color-text-dark);
+  letter-spacing: var(--ls-tight);
+}
+
+.section-title--light .section-title__heading {
+  color: var(--color-text-light);
+}
