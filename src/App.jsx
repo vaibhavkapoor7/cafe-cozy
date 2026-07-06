@@ -6,6 +6,7 @@ import Menu from './sections/Menu/Menu'
 import Gallery from './sections/Gallery/Gallery'
 import WhyChooseUs from './sections/WhyChooseUs/WhyChooseUs'
 import Testimonials from './sections/Testimonials/Testimonials'
+import Location from './sections/Location/Location'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Gallery />
       <WhyChooseUs />
       <Testimonials />
+      <Location />
     </div>
   )
 }
