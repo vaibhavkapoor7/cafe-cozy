@@ -5,6 +5,7 @@ import FeaturedCoffee from './sections/FeaturedCoffee/FeaturedCoffee'
 import Menu from './sections/Menu/Menu'
 import Gallery from './sections/Gallery/Gallery'
 import WhyChooseUs from './sections/WhyChooseUs/WhyChooseUs'
+import Testimonials from './sections/Testimonials/Testimonials'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Menu />
       <Gallery />
       <WhyChooseUs />
+      <Testimonials />
     </div>
   )
 }

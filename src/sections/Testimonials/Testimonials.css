@@ -1,0 +1,16 @@
+.testimonials {
+  background-color: var(--color-bg-light);
+}
+
+.testimonials__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}

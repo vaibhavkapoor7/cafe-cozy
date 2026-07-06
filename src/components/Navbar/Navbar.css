@@ -6,6 +6,7 @@
   height: 80px;
   display: flex;
   align-items: center;
+  overflow: hidden;
   z-index: var(--z-navbar);
   transition: background-color var(--transition-base), transform var(--transition-base);
 }
