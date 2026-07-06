@@ -40,24 +40,24 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          className="hero__socials"
-          variants={fadeIn}
-          initial="hidden"
-          animate="visible"
-        >
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <FaInstagram />
-          </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <FaFacebookF />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <FaTwitter />
-          </a>
-        </motion.div>
-
       </div>
+
+      <motion.div
+        className="hero__socials"
+        variants={fadeIn}
+        initial="hidden"
+        animate="visible"
+      >
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <FaInstagram />
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <FaFacebookF />
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+          <FaTwitter />
+        </a>
+      </motion.div>
 
       <div className="hero__scroll">
         <span className="hero__scroll-text">Scroll</span>

@@ -11,7 +11,12 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 26%;
+  /* 26%/28vw are relative to the viewport (their containing block), which
+     keeps growing past where .container itself caps out at 1200px — capping
+     at the value each would have at exactly that width keeps the image and
+     the reserved text column in proportion instead of one outgrowing the
+     other on wide screens. */
+  width: min(26vw, calc(var(--container-max) * 0.26));
   overflow: hidden;
 }
 
@@ -55,7 +60,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2xl);
-  padding-right: 28%;
+  padding-right: min(28vw, calc(var(--container-max) * 0.28));
 }
 
 /* ---- Layout: tabs + items ---- */
