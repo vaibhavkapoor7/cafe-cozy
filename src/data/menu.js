@@ -1,0 +1,49 @@
+export const menuCategories = [
+  { id: 'coffee', label: 'Coffee' },
+  { id: 'tea', label: 'Tea' },
+  { id: 'desserts', label: 'Desserts' },
+  { id: 'brunch', label: 'Brunch' },
+]
+
+export const menuItems = {
+  coffee: [
+    { id: 'c1', name: 'Espresso', price: '$3.50' },
+    { id: 'c2', name: 'Americano', price: '$3.75' },
+    { id: 'c3', name: 'Cappuccino', price: '$4.75' },
+    { id: 'c4', name: 'Latte', price: '$4.75' },
+    { id: 'c5', name: 'Flat White', price: '$4.75' },
+    { id: 'c6', name: 'Mocha', price: '$5.25' },
+    { id: 'c7', name: 'Caramel Macchiato', price: '$5.25' },
+    { id: 'c8', name: 'Cold Brew', price: '$4.95' },
+    { id: 'c9', name: 'Affogato', price: '$5.75' },
+    { id: 'c10', name: 'Iced Latte', price: '$4.95' },
+  ],
+  tea: [
+    { id: 't1', name: 'English Breakfast', price: '$3.25' },
+    { id: 't2', name: 'Earl Grey', price: '$3.25' },
+    { id: 't3', name: 'Green Tea', price: '$3.50' },
+    { id: 't4', name: 'Chamomile', price: '$3.50' },
+    { id: 't5', name: 'Chai Latte', price: '$4.50' },
+    { id: 't6', name: 'Matcha Latte', price: '$5.25' },
+    { id: 't7', name: 'Peppermint', price: '$3.25' },
+    { id: 't8', name: 'Jasmine Tea', price: '$3.75' },
+  ],
+  desserts: [
+    { id: 'd1', name: 'Tiramisu', price: '$6.50' },
+    { id: 'd2', name: 'Cheesecake', price: '$6.00' },
+    { id: 'd3', name: 'Chocolate Cake', price: '$5.75' },
+    { id: 'd4', name: 'Croissant', price: '$3.50' },
+    { id: 'd5', name: 'Almond Biscotti', price: '$2.75' },
+    { id: 'd6', name: 'Blueberry Muffin', price: '$3.75' },
+    { id: 'd7', name: 'Cinnamon Roll', price: '$4.25' },
+    { id: 'd8', name: 'Macarons', price: '$2.50' },
+  ],
+  brunch: [
+    { id: 'b1', name: 'Avocado Toast', price: '$9.50' },
+    { id: 'b2', name: 'Eggs Benedict', price: '$12.75' },
+    { id: 'b3', name: 'Pancake Stack', price: '$10.50' },
+    { id: 'b4', name: 'Breakfast Bowl', price: '$11.25' },
+    { id: 'b5', name: 'French Toast', price: '$10.75' },
+    { id: 'b6', name: 'Granola & Yogurt', price: '$8.50' },
+  ],
+}

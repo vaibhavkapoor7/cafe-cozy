@@ -8,8 +8,10 @@
 }
 
 .coffee-card:hover {
-  transform: translateY(-8px);
+  transform: scale(1.04) translateY(-12px);
   box-shadow: var(--shadow-lg);
+  z-index: 2;
+  position: relative;
 }
 
 .coffee-card__image-wrapper {
@@ -60,12 +62,3 @@
   margin-top: var(--space-xs);
 }
 
-/* Featured card - elevated above the others */
-.coffee-card--featured {
-  transform: translateY(-24px);
-  box-shadow: var(--shadow-lg);
-}
-
-.coffee-card--featured:hover {
-  transform: translateY(-32px);
-}
