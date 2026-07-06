@@ -6,7 +6,6 @@
   height: 80px;
   display: flex;
   align-items: center;
-  overflow: hidden;
   z-index: var(--z-navbar);
   transition: background-color var(--transition-base), transform var(--transition-base);
 }
@@ -16,9 +15,13 @@
 }
 
 .navbar__container {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .navbar__logo-img {
@@ -86,4 +89,94 @@
 .navbar__cta:hover {
   background-color: var(--color-primary);
   color: var(--color-bg-dark);
+}
+
+/* ---- Mobile toggle ---- */
+.navbar__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  background: none;
+  border: none;
+  z-index: 2;
+}
+
+.navbar--over-light .navbar__toggle {
+  color: var(--color-primary);
+}
+
+/* ---- Mobile dropdown panel ---- */
+.navbar__mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding-inline: var(--container-padding);
+  background-color: var(--color-bg-dark);
+  transition: max-height var(--transition-slow), opacity var(--transition-base);
+}
+
+.navbar--menu-open .navbar__mobile-menu {
+  max-height: 80vh;
+  opacity: 1;
+  pointer-events: auto;
+  padding-block: var(--space-xl) var(--space-2xl);
+  border-top: 1px solid var(--color-border);
+  overflow-y: auto;
+}
+
+.navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.navbar__mobile-link {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-light);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.navbar__mobile-link:hover {
+  color: var(--color-primary);
+}
+
+.navbar__cta--mobile {
+  width: fit-content;
+}
+
+@media (max-width: 900px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__cta:not(.navbar__cta--mobile) {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__logo-img {
+    width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__logo-img {
+    width: 170px;
+  }
 }

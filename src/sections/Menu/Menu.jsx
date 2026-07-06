@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { FiCoffee, FiArrowRight } from 'react-icons/fi'
 import { LuLeaf, LuCakeSlice, LuEgg } from 'react-icons/lu'
 import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import { menuCategories, menuItems } from '../../data/menu'
 import menuImg from '../../assets/images/menu-coffee.png'
+import { fadeIn, fadeUp, viewportOnce } from '../../lib/motion'
 import './Menu.css'
 
 const categoryIcons = {
@@ -21,13 +23,19 @@ const Menu = () => {
   return (
     <section className="menu section" id="menu" data-navbar-theme="light">
 
-      <div className="menu__image-wrapper">
+      <motion.div
+        className="menu__image-wrapper"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <img src={menuImg} alt="A freshly prepared coffee" className="menu__image" />
         <a href="#full-menu" className="menu__view-btn">
           View Full Menu
           <FiArrowRight />
         </a>
-      </div>
+      </motion.div>
 
       <div className="menu__container container">
 
@@ -37,7 +45,13 @@ const Menu = () => {
           align="center"
         />
 
-        <div className="menu__layout">
+        <motion.div
+          className="menu__layout"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
 
           <div className="menu__tabs">
             {menuCategories.map((category) => (
@@ -62,7 +76,7 @@ const Menu = () => {
             ))}
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
     </section>

@@ -141,7 +141,12 @@
   flex-direction: column;
   gap: var(--space-lg);
   position: absolute;
-  right: var(--space-xl);
+  /* A fixed px offset drifts onto the background image's cup on very wide
+     screens: background-size:cover maps the image width 1:1 to the viewport
+     once the viewport is wider than the image's own aspect ratio, so the cup
+     sits at a fixed *percentage* of viewport width — this offset needs to
+     scale the same way to stay clear of it. */
+  right: max(var(--space-xl), 3vw);
   top: 50%;
   transform: translateY(-50%);
   z-index: 3;
@@ -195,5 +200,37 @@
     opacity: 1;
     transform: scaleY(1);
     transform-origin: top;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero__vertical-text,
+  .hero__socials {
+    display: none;
+  }
+
+  .hero__content {
+    padding-left: var(--container-padding);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero__content {
+    padding-left: 0;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+  }
+
+  .hero__btn {
+    justify-content: center;
+  }
+
+  .hero__scroll {
+    display: none;
   }
 }

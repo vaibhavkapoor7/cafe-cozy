@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { FaInstagram, FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa'
 import { FiArrowRight } from 'react-icons/fi'
 import { navLinks } from '../../data/navigation'
 import logo from '../../assets/images/logo.png'
+import { staggerContainer, staggerItem, viewportOnce } from '../../lib/motion'
 import './Footer.css'
 
 const openingHours = [
@@ -24,10 +26,16 @@ const Footer = () => {
   }
 
   return (
-    <footer className="footer">
-      <div className="footer__container container">
+    <footer className="footer" data-navbar-theme="dark">
+      <motion.div
+        className="footer__container container"
+        variants={staggerContainer(0.12)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
 
-        <div className="footer__brand">
+        <motion.div className="footer__brand" variants={staggerItem}>
           <img src={logo} alt="Cafe Cozy Vancouver" className="footer__logo" />
           <p className="footer__tagline">
             Great coffee. Good people. Beautiful moments.
@@ -38,9 +46,9 @@ const Footer = () => {
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FaTwitter /></a>
             <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><FaPinterestP /></a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="footer__column">
+        <motion.div className="footer__column" variants={staggerItem}>
           <h4 className="footer__heading">Quick Links</h4>
           <ul className="footer__links">
             {navLinks.map((link) => (
@@ -49,9 +57,9 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
-        <div className="footer__column">
+        <motion.div className="footer__column" variants={staggerItem}>
           <h4 className="footer__heading">Opening Hours</h4>
           <ul className="footer__hours">
             {openingHours.map((row) => (
@@ -61,9 +69,9 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
-        <div className="footer__column">
+        <motion.div className="footer__column" variants={staggerItem}>
           <h4 className="footer__heading">Stay Connected</h4>
           <p className="footer__newsletter-text">
             Subscribe to our newsletter for updates and exclusive offers.
@@ -84,9 +92,9 @@ const Footer = () => {
           {submitted && (
             <p className="footer__success">Thank you for subscribing!</p>
           )}
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
 
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">

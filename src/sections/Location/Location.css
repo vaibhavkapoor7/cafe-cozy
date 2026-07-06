@@ -92,3 +92,20 @@
 .location__image-wrapper:hover .location__image {
   transform: scale(1.05);
 }
+
+@media (max-width: 1024px) {
+  .location__container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .location__info {
+    padding-inline: 0;
+    order: -1;
+  }
+
+  .location__map,
+  .location__image-wrapper {
+    min-height: 300px;
+  }
+}

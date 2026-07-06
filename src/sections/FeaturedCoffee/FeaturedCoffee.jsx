@@ -1,8 +1,10 @@
 import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import CoffeeCard from '../../components/CoffeeCard/CoffeeCard'
 import { coffees } from '../../data/coffees'
+import { fadeUp, staggerContainer, staggerItem, viewportOnce } from '../../lib/motion'
 import './FeaturedCoffee.css'
 
 const FeaturedCoffee = () => {
@@ -37,7 +39,13 @@ const FeaturedCoffee = () => {
 
       <div className="featured__inner container">
 
-        <div className="featured__intro">
+        <motion.div
+          className="featured__intro"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
           <SectionTitle
             eyebrow="Our Favorites"
             title="Featured Coffee"
@@ -63,18 +71,23 @@ const FeaturedCoffee = () => {
               <FiArrowRight />
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        <div
+        <motion.div
           className="featured__track"
           ref={trackRef}
           onWheel={blockWheel}
+          variants={staggerContainer(0.1)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
         >
           {coffees.map((coffee) => (
-            <div
+            <motion.div
               className="featured__slide"
               key={coffee.id}
               onClick={centerCard}
+              variants={staggerItem}
             >
               <CoffeeCard
                 name={coffee.name}
@@ -83,9 +96,9 @@ const FeaturedCoffee = () => {
                 image={coffee.image}
                 featured={coffee.featured}
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
 

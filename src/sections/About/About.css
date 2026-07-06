@@ -79,3 +79,25 @@
   text-transform: uppercase;
   letter-spacing: var(--ls-wide);
 }
+
+@media (max-width: 900px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .about__image-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about__text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .about__stats {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--space-xl);
+  }
+}

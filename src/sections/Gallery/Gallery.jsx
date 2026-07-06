@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 import { FiArrowRight } from 'react-icons/fi'
 import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import { galleryImages } from '../../data/gallery'
+import { fadeUp, viewportOnce } from '../../lib/motion'
 import './Gallery.css'
 
 const DEFAULT_COLS = [1, 1, 1, 1]
@@ -20,6 +22,7 @@ const HOVER_TARGETS = [
 
 const ANIMATION_DURATION = 1200
 const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5)
+const DESKTOP_QUERY = '(min-width: 901px)'
 
 const Gallery = () => {
   const gridRef = useRef(null)
@@ -34,6 +37,10 @@ const Gallery = () => {
   }
 
   const animateTo = (targetCols, targetRows) => {
+    // Below the tablet breakpoint the grid falls back to a simple, uniform
+    // CSS layout (see Gallery.css) — skip the JS-driven resize entirely so
+    // it doesn't leave stale inline track sizes fighting that layout.
+    if (!window.matchMedia(DESKTOP_QUERY).matches) return
     if (frameRef.current) cancelAnimationFrame(frameRef.current)
 
     const startCols = [...currentRef.current.cols]
@@ -59,8 +66,23 @@ const Gallery = () => {
   }
 
   useEffect(() => {
-    applyTracks(DEFAULT_COLS, DEFAULT_ROWS)
+    const mql = window.matchMedia(DESKTOP_QUERY)
+
+    const sync = () => {
+      if (mql.matches) {
+        currentRef.current = { cols: [...DEFAULT_COLS], rows: [...DEFAULT_ROWS] }
+        applyTracks(DEFAULT_COLS, DEFAULT_ROWS)
+      } else if (gridRef.current) {
+        if (frameRef.current) cancelAnimationFrame(frameRef.current)
+        gridRef.current.style.gridTemplateColumns = ''
+        gridRef.current.style.gridTemplateRows = ''
+      }
+    }
+
+    sync()
+    mql.addEventListener('change', sync)
     return () => {
+      mql.removeEventListener('change', sync)
       if (frameRef.current) cancelAnimationFrame(frameRef.current)
     }
   }, [])
@@ -69,7 +91,13 @@ const Gallery = () => {
     <section className="gallery section" id="gallery" data-navbar-theme="dark">
       <div className="gallery__container container">
 
-        <div className="gallery__intro">
+        <motion.div
+          className="gallery__intro"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
           <SectionTitle
             eyebrow="Gallery"
             title="Moments At Cozy"
@@ -83,9 +111,16 @@ const Gallery = () => {
             View All Gallery
             <FiArrowRight />
           </a>
-        </div>
+        </motion.div>
 
-        <div className="gallery__grid" ref={gridRef}>
+        <motion.div
+          className="gallery__grid"
+          ref={gridRef}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
           {galleryImages.map((image, index) => (
             <div
               className={`gallery__item gallery__item--${image.size}`}
@@ -100,7 +135,7 @@ const Gallery = () => {
               />
             </div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

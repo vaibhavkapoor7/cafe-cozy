@@ -89,3 +89,30 @@
   grid-column: span 1;
   grid-row: span 1;
 }
+
+@media (max-width: 900px) {
+  .gallery__container {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .gallery__grid {
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 160px;
+  }
+
+  .gallery__item--large,
+  .gallery__item--tall,
+  .gallery__item--wide,
+  .gallery__item--small {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery__grid {
+    grid-auto-rows: 130px;
+  }
+}

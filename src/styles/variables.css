@@ -31,12 +31,12 @@
   --font-body: 'Inter', system-ui, sans-serif;
 
   /* Font Sizes */
-  --fs-hero: 12rem;
-  --fs-h1: 3.5rem;
-  --fs-h2: 2.5rem;
-  --fs-h3: 1.5rem;
-  --fs-body: 1.063rem;
-  --fs-small: 0.875rem;
+  --fs-hero: clamp(3rem, 11vw, 12rem);
+  --fs-h1: clamp(2rem, 5vw, 3.5rem);
+  --fs-h2: clamp(1.75rem, 4vw, 2.5rem);
+  --fs-h3: clamp(1.15rem, 2.2vw, 1.5rem);
+  --fs-body: clamp(0.95rem, 1.4vw, 1.063rem);
+  --fs-small: clamp(0.8rem, 1.1vw, 0.875rem);
   --fs-eyebrow: clamp(0.688rem, 0.9vw, 0.813rem);
 
   /* Font Weights */
